@@ -23,7 +23,7 @@ Please follow contribution guidelines at the [Contributor Covenant](https://www.
 
 ## Questions
 Contact me at the following:
-- [hsengu's GitHub Profile](https://github.io/hsengu)
+- [hsengu's GitHub Profile](https://github.com/hsengu)
 - hok.s.uy@hsengu.com
 
 ## License

@@ -73,7 +73,7 @@ ${data.contribution}
 
 ## Questions
 Contact me at the following:
-- [${data.github}'s GitHub Profile](https://github.io/${data.github})
+- [${data.github}'s GitHub Profile](https://github.com/${data.github})
 - ${data.email}
 
 ${renderLicenseSection(data.license)}
