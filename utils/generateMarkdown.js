@@ -4,7 +4,7 @@ function renderLicenseBadge(license) {
   let result = '';
 
   if(license) {
-    let licenseName = license.replace(/ +/g, '%20');
+    let licenseName = license.replace(/ +/g, '%20');    // Use regex to replace spaces
     let colorExt = 'blue.svg';
     let link = 'https://img.shields.io/badge/';
 
@@ -51,11 +51,32 @@ This project is licensed under ${license}`
   return result;
 }
 
+// Function that returns license table of content string
+// If there is no license returns empty string.
+function licenseTOC(license) {
+  let result = '';
+  
+  if(license)
+    result = '* [License](#license)';
+  
+  return result;
+};
+
 // Function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title.trim()}
 
 ${renderLicenseBadge(data.license)}
+
+## Table of Contents
+* [Description](#description)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Contributing](#contributing-to-${data.title.toLowerCase().replace(/ +/g, '-')})
+* [Test](#test)
+* [Questions](#questions)
+${licenseTOC(data.license)}
+
 ## Description
 ${data.description}
 
