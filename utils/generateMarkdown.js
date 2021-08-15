@@ -54,24 +54,24 @@ function renderLicenseSection(license) {
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}
+  return `# ${data.title.trim()}
 
 ## Description
-${data.description.replace(/\n/g, '<br/>')}
+${data.description.replace(/\n/g, '<br/>').trim()}
 
 ## Installation
-  ${data.instructions.replace(/\n/g, '<br/>\t')}
+\t${data.instructions.replace(/\n/g, '\n\t').trim()}
 
 ## Usage
-  ${data.usage.replace(/\n/g, '<br/>\t')}
+\t${data.usage.replace(/\n/g, '\n\t').trim()}
 
 ## Contributing to ${data.title}
-${data.contribution.replace(/\n/g, '<br/>')}
+${data.contribution.replace(/\n/g, '<br/>').trim()}
 
 ## Test
-${data.test.replace(/\n/g, '<br/>')}
+${data.test.replace(/\n/g, '<br/>').trim()}
 
-${renderLicenseSection(data.license)}
+${renderLicenseSection(data.license).trim()}
 `;
 }
 
