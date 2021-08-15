@@ -4,7 +4,7 @@ function renderLicenseBadge(license) {
   let result = '';
 
   if(license) {
-    let licenseName = license.replace(/ +/g, '%20');
+    let licenseName = license.replace(/ +/g, '%20');    // Use regex to replace spaces
     let colorExt = 'blue.svg';
     let link = 'https://img.shields.io/badge/';
 
@@ -72,7 +72,7 @@ ${renderLicenseBadge(data.license)}
 * [Description](#description)
 * [Installation](#installation)
 * [Usage](#usage)
-* [Contributing](#contributing-to-${data.title})
+* [Contributing](#contributing-to-${data.title.toLowerCase().replace(/ +/g, '-')})
 * [Test](#test)
 * [Questions](#questions)
 ${licenseTOC(data.license)}
