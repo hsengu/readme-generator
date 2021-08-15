@@ -4,7 +4,7 @@
 ## Description
 This project is a Node.js application that builds a professional readme file using user input. This application runs as a shell program and uses inquirer to prompt the user for inputs. This readme is an example of what it outputs!
 
-Preview the application in action [here](https://will.add/a/proper/link/when/the/recording/is/finished.html).
+Preview the application in action [here](https://drive.google.com/file/d/1xgd_g9p-DPFIhXkFB0x89NdTLNqn6HxU/view?usp=sharing).
 
 
 ## Installation
