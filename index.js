@@ -45,7 +45,7 @@ const questions = [{
                      }
                    },
                    {
-                     type: 'editor',
+                     type: 'input',
                      name: 'contribution',
                      message: 'Enter contribution information for your project (Required)',
                      validate: contributionInput => {
@@ -76,12 +76,31 @@ const questions = [{
                      message: 'Which license does your project use?',
                      choices: ['Apache License 2.0', 'GNU GPL v2', 'GNU GPL v3', 'ISC License', 'MIT License'],
                      when: ({hasLicense}) => hasLicense
+                   },
+                   {
+                     type: 'input',
+                     name: 'github',
+                     message: 'What is your github username? (Required)',
+                     validate: useridInput => {
+                     if(!useridInput)
+                        console.log('You must enter your github username!');
+                     return useridInput  !== '';
+                     }
+                   },
+                   {
+                     type: 'input',
+                     name: 'email',
+                     message: 'What is your email address? (Required)',
+                     validate: emailInput => {
+                     if(!emailInput)
+                        console.log('You must enter your email!');
+                     return emailInput  !== '';
+                     }
                    }
                   ];
 
 // TODO: Create a function to write README file
 const writeToFile = (fileName, data) => {
-   console.log(data);
    return new Promise((resolve, reject) => {
       fs.writeFile('./output/' + fileName, generateMarkdown(data), err => {
          if(err) {

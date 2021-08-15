@@ -11,7 +11,7 @@ function renderLicenseBadge(license) {
     result = '[![License: ' + license + '](' + link + 'License-' + licenseName + '-' + colorExt + ')]';
   }
 
-  return result;
+  return result + renderLicenseLink(license);
 }
 
 // TODO: Create a function that returns the license link
@@ -45,8 +45,7 @@ function renderLicenseSection(license) {
 
   if(license) {
     result = `## License
-  ${renderLicenseBadge(license) + renderLicenseLink(license)}
-    `
+This project is licensed under ${license}`
   }
 
   return result;
@@ -56,8 +55,9 @@ function renderLicenseSection(license) {
 function generateMarkdown(data) {
   return `# ${data.title.trim()}
 
+${renderLicenseBadge(data.license)}
 ## Description
-${data.description.replace(/\n/g, '<br/>').trim()}
+${data.description}
 
 ## Installation
 \t${data.instructions.replace(/\n/g, '\n\t').trim()}
@@ -66,13 +66,18 @@ ${data.description.replace(/\n/g, '<br/>').trim()}
 \t${data.usage.replace(/\n/g, '\n\t').trim()}
 
 ## Contributing to ${data.title}
-${data.contribution.replace(/\n/g, '<br/>').trim()}
+${data.contribution}
 
 ## Test
-${data.test.replace(/\n/g, '<br/>').trim()}
+\t${data.test.replace(/\n/g, '\n\t').trim()}
 
-${renderLicenseSection(data.license).trim()}
-`;
-}
+## Questions
+Contact me at the following:
+- [${data.github}'s GitHub Profile](https://github.io/${data.github})
+- ${data.email}
+
+${renderLicenseSection(data.license)}
+`
+};
 
 module.exports = generateMarkdown;
