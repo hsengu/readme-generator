@@ -15,7 +15,7 @@ const questions = [{
                      }
                    },
                    {
-                     type: 'input',
+                     type: 'editor',
                      name: 'description',
                      message: 'Enter a description for your project (Required) : ',
                      validate: descriptionInput => {
@@ -25,7 +25,7 @@ const questions = [{
                      }
                    },
                    {
-                     type: 'input',
+                     type: 'editor',
                      name: 'instructions',
                      message: 'Enter installation instructions for your project (Required)',
                      validate: instructionsInput => {
@@ -35,7 +35,7 @@ const questions = [{
                      }
                    },
                    {
-                     type: 'input',
+                     type: 'editor',
                      name: 'usage',
                      message: 'Enter usage information for your project (Required)',
                      validate: usageInput => {
@@ -45,7 +45,7 @@ const questions = [{
                      }
                    },
                    {
-                     type: 'input',
+                     type: 'editor',
                      name: 'contribution',
                      message: 'Enter contribution information for your project (Required)',
                      validate: contributionInput => {
@@ -55,7 +55,7 @@ const questions = [{
                      }
                    },
                    {
-                     type: 'input',
+                     type: 'editor',
                      name: 'test',
                      message: "Enter test information for your project (Required)",
                      validate: testInput => {
@@ -81,6 +81,7 @@ const questions = [{
 
 // TODO: Create a function to write README file
 const writeToFile = (fileName, data) => {
+   console.log(data);
    return new Promise((resolve, reject) => {
       fs.writeFile('./output/' + fileName, generateMarkdown(data), err => {
          if(err) {
